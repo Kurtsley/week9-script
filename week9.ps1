@@ -7,9 +7,9 @@
 Clear-Host
 
 # Welcome
-Write-Host("############`nWeek9 Script`nby Kurtsley`n##########`n`n")
+Write-Host("############`nWeek9 Script`nby Kurtsley`n############`n")
 
-$continue = Read-Host("Welcome to the week 9 script. This script will perform MOST of the tasks assigned this week. Continue? (Y/N)")
+$continue = Read-Host("Welcome to the week 9 script. This script will perform MOST of the tasks assigned this week.`nContinue? (Y/N)")
 while ("Y", "N" -notcontains $continue) { $continue = Read-Host "Welcome to the week 9 script. Continue? (Y/N)" }
 if ($continue -eq "Y") {
 
