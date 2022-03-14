@@ -7,6 +7,8 @@
 Clear-Host
 
 # Welcome
+Write-Host("############`nWeek9 Script`nby Kurtsley`n##########`n`n")
+
 $continue = Read-Host("Welcome to the week 9 script. This script will perform MOST of the tasks assigned this week. Continue? (Y/N)")
 while ("Y", "N" -notcontains $continue) { $continue = Read-Host "Welcome to the week 9 script. Continue? (Y/N)" }
 if ($continue -eq "Y") {
@@ -75,7 +77,7 @@ if ($continue -eq "Y") {
     # Link http://serverfault.com/a/663730
 
     # Quota management
-    Write-Host("Setting quota management...`nAll contoso.com users will have a 1kb warning threshold and a 1000 Petabyte data limit.`n")
+    Write-Host("Setting quota management...`n`nAll contoso.com users will have a 1kb warning threshold and a 1000 Petabyte data limit.`n")
     Start-Sleep -s 1
     fsutil quota track c:
     fsutil quota modify c: 1000 1000000000000000000 contoso.com
