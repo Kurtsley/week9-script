@@ -47,7 +47,7 @@ if ($continue -eq "Y") {
     set-acl -path "c:\piat" -aclobject $acl
 
 
-    # Mapping the PIAT folder on the client
+    # Mapping the PIAT folder on the client, NA for this script
     # New-PSDrive -Persist -Name "Z" -PSProvider "FileSystem" -Root "\\dc1\piat" -Scope global
 
     # Enabling shadow copies
@@ -68,6 +68,9 @@ if ($continue -eq "Y") {
     $Action = New-ScheduledTaskAction -Execute "c:\windows\system32\vssadmin.exe" -Argument "create shadow /for=C:"
     $Trigger = New-ScheduledTaskTrigger -Daily -At 6:00PM
     Register-ScheduledTask -TaskName ShadowCopyPM -Trigger $Trigger -Action $Action -Description "ShadowCopyPM"
+
+    Write-Host("Shadow copy backup will run twice daily at 6AM and 6PM.`n")
+    Start-Sleep -s 3
 
     # Link http://serverfault.com/a/663730
 
